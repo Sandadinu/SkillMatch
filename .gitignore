@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pkl
+env/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+*.DS_Store
+
+# Dotnet
+*.user
+*.suo
+bin/
+obj/
