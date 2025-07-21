@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SkillMatch</title>
+    </head>
+
+    <body>
+        <h2>Enter your skills</h2>
+        <textarea id="skills" rows="4" cols="50" placeholder="Enter your skills here..."></textarea>
+        <br>
+        <button onclick="getJob()">Get Recommendation</button>
+        <p id="result"></p>
+
+        <script>
+            async function getJob(){
+                const skills = document.getElementById('skills').value;
+                const res = await fetch('https://api.example.com/get-job', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ skills: skills })
+                });
+                const data = await res.json();
+                document.getElementById('result').innerText = `Recommended Role: ${data.role}`;
+            }
+        </script>
+    </body>
+</html>
